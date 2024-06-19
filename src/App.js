@@ -73,7 +73,7 @@ function App() {
           <div className='button'>
             <button className='addingTask' onClick={handleShow}>Add Task</button>
           </div>
-
+  
           <div className='dropdown'>
             <select name='options' id='options' value={filter} onChange={(e) => setFilter(e.target.value)} className='optionSelect'>
               <option value="All">All</option>
@@ -83,36 +83,40 @@ function App() {
           </div>
         </div>
         <br />
-
+  
         <div className='cardbody'>
-          {filteredTodos.map((todo) => (
-            <div className='innerCard' key={todo.id}>
-              <div className='left'>
-                <div className='square'>
-                  <input type="checkbox" checked={todo.completed} onChange={() => handleToggle(todo.id)} className='checkbox'style={{backgroundColor:"#646ff0"}}/>
+          {filteredTodos.length === 0 ? (
+            <div className="noTodos">No Todos</div>
+          ) : (
+            filteredTodos.map((todo) => (
+              <div className='innerCard' key={todo.id}>
+                <div className='left'>
+                  <div className='square'>
+                    <input type="checkbox" checked={todo.completed} onChange={() => handleToggle(todo.id)} className='checkbox'style={{backgroundColor:"#646ff0"}}/>
+                  </div>
+                  <div className='taskName'>
+                    <span className={`fontsize ${todo.completed ? 'completed' : ''}`}>
+                      {todo.completed ? <del>{todo.text}</del> : todo.text}
+                    </span>
+                    <span className='time'>{todo.time}</span>
+                  </div>
                 </div>
-                <div className='taskName'>
-                  <span className={`fontsize ${todo.completed ? 'completed' : ''}`}>
-                    {todo.completed ? <del>{todo.text}</del> : todo.text}
-                  </span>
-                  <span className='time'>{todo.time}</span>
+                <div className='right'>
+                  <div className='icons'>
+                    <span onClick={() => deleteTodo(todo.id)}>
+                      <Trash3Fill size={16} />
+                    </span>
+                    <span onClick={() => handleEdit(todo)}>
+                      <PencilFill size={16} />
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div className='right'>
-                <div className='icons'>
-                  <span onClick={() => deleteTodo(todo.id)}>
-                    <Trash3Fill size={16} />
-                  </span>
-                  <span onClick={() => handleEdit(todo)}>
-                    <PencilFill size={16} />
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
-
+  
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{currentTodo ? 'UPDATE TODO' : 'ADD TODO'}</Modal.Title>

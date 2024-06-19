@@ -125,3 +125,11 @@
  .button ,.optionSelect:hover{
     cursor: pointer;
 }
+
+.noTodos{
+    width: fit-content;
+    margin: auto;
+    padding: 5px 8px 5px 8px;
+    background-color: rgb(222, 222, 222);
+    border-radius: 8px;
+}
