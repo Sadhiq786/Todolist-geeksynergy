@@ -38,14 +38,17 @@ const AddTodo = ({ handleClose, currentTodo }) => {
   return (
     <div className="Addbutton">
       <form onSubmit={handleSubmit}>
+
         <label>Title</label><br/>
         <input type="text" value={text} onChange={(e) => setText(e.target.value)}/>
         <br/><br/>
+
         <label>Status</label><br/>
         <select name='choose' id='choose' value={choose} onChange={(e) => setChoose(e.target.value)}>
            <option value="Incompleted">Incomplete</option>
            <option value="Completed">Completed</option>
         </select>
+        
         <br/><br/>
         <button type="submit" className="addingTask">{currentTodo ? 'Update Task' : 'Add Task'}</button>&nbsp;&nbsp;
         <button type="button" onClick={handleClose} className="cancelTask">Cancel</button>

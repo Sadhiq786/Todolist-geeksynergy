@@ -85,11 +85,14 @@ function App() {
         <br />
   
         <div className='cardbody'>
-          {filteredTodos.length === 0 ? (
-            <div className="noTodos">No Todos</div>
-          ) : (
-            filteredTodos.map((todo) => (
+          {
+          filteredTodos.length === 0 ? (
+            <div className="noTodos">No Todos</div>) 
+            :
+            (
+              filteredTodos.map((todo) => (
               <div className='innerCard' key={todo.id}>
+
                 <div className='left'>
                   <div className='square'>
                     <input type="checkbox" checked={todo.completed} onChange={() => handleToggle(todo.id)} className='checkbox'style={{backgroundColor:"#646ff0"}}/>
@@ -101,6 +104,7 @@ function App() {
                     <span className='time'>{todo.time}</span>
                   </div>
                 </div>
+                
                 <div className='right'>
                   <div className='icons'>
                     <span onClick={() => deleteTodo(todo.id)}>
