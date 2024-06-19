@@ -1,0 +1,32 @@
+
+
+.Addbutton form input{
+    width: 100%;
+    padding: 7px;
+}
+
+.Addbutton form select{
+    width: 100%;
+    padding: 8px;
+    font-size: 17px;
+
+}
+
+
+.addingTask{
+    padding: 11px 25px 11px 25px;
+    font-size: medium;
+    background-color: #646ff0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.cancelTask{
+    padding: 11px 25px 11px 25px;
+    font-size: medium;
+    background-color: #cccdde;
+    border: none;
+    border-radius: 5px;
+}

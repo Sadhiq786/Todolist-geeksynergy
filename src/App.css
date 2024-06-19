@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+.App{
+    font-family: Poppins,sans-serif;
+    background-color: #f8f8ff;
+    position: absolute;
+    width: 99%;
+    top: 0px;
+    height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.heading{
+    font-size: 37px;
+    font-weight: 700;
+    color: #646681;
+}
+.main{
+    width: 50%;
+    margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.filter{
+    display: flex;
+    justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.filter button{
+    padding: 11px 25px 11px 25px;
+    font-size: medium;
+    background-color: #646ff0;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.filter select{
+    height: 40px;
+    padding: 10px;
+    width: 140px;
+    background-color: #cccdde;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.filter select option{
+    background-color: #cccdde;
+    padding: 10px;
+}
+
+
+/* cardbody */
+
+.cardbody{
+    padding: 15px;
+    background-color: #ecedf6;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.innerCard{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 15px;
+    gap: 10px;
+    border-radius: 8px;
+}
+
+
+.left{
+    display: flex;
+    gap: 10px;
+}
+
+.taskName span{
+    display: flex;
+    flex-direction: row;
+}
+.time{
+    font-size: 12px;
+    color: gray;
+}
+
+.fontsize{
+    font-size: 15px;
+    width: 580px;
+    overflow: hidden;
+    word-break: break-all;
+
+}
+
+.icons{
+    display: flex;
+    gap: 10px;
+    color: rgba(130, 130, 130, 0.959);
+}
+
+.icons span{
+    background-color: lightgray;
+    display: block;
+    height: fit-content;
+    padding: 2px 8px 6px 8px;
+    border-radius: 5px;
+    color: rgb(70, 70, 70);
+}
+
+.square input{
+    height: 25px;
+    width: 25px;
+    margin-top: 4px;
+    accent-color: #646ff0;
+      
+}
+
+.icons span:hover{
+    cursor: pointer;
+    color: rgba(131, 131, 131, 0.959);
+}
+
+.checkbox:hover{
+    cursor: pointer;
+}
+
+ .button ,.optionSelect:hover{
+    cursor: pointer;
 }
